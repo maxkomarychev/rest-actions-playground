@@ -6,7 +6,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: maxkomarychev/create-deployment@v0.1.1
+      - uses: maxkomarychev/create-deployment@test-bool
         id: init_deploy
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
