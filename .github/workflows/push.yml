@@ -12,6 +12,9 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ github.ref }}
           required_contexts: <<EMPTY>>
+          environment: test123
+          transient_environment: true
+          production_environment: false
       - uses: maxkomarychev/create-deployment-status@test-in-progress
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
