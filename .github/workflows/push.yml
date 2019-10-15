@@ -17,4 +17,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           deployment_id: ${{ steps.init_deploy.outputs.id }}
           state: in_progress
+      - name: wait some time
+        run: sleep 30
+      - uses: maxkomarychev/create-deployment-status@test-in-progress
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          deployment_id: ${{ steps.init_deploy.outputs.id }}
+          state: success
         
