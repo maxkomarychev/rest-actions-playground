@@ -6,12 +6,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: maxkomarychev/create-deployment@0.1.1
+      - uses: maxkomarychev/create-deployment@v0.1.1
         id: init_deploy
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ github.ref }}
-      - uses: maxkomarcyev/create-deployment-status@0.1.1
+      - uses: maxkomarcyev/create-deployment-status@v0.1.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           deployment_id: ${{ steps.init_deploy.outputs.id }}
