@@ -6,30 +6,30 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: maxkomarychev/create-deployment@test-bool
+      - uses: maxkomarychev/create-deployment@v0.2.1
         id: init_deploy
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ github.ref }}
           required_contexts: <<EMPTY>>
-          environment: test123
+          environment: opapa
           transient_environment: true
           production_environment: false
-      - uses: maxkomarychev/create-deployment-status@test-in-progress
+      - uses: maxkomarychev/create-deployment-status@v0.2.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           deployment_id: ${{ steps.init_deploy.outputs.id }}
           state: in_progress
       - name: wait some time
         run: sleep 15
-      - uses: maxkomarychev/create-deployment-status@test-in-progress
+      - uses: maxkomarychev/create-deployment-status@v0.2.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           deployment_id: ${{ steps.init_deploy.outputs.id }}
           state: success
       - name: wait some time
         run: sleep 15
-      - uses: maxkomarychev/create-deployment-status@test-in-progress
+      - uses: maxkomarychev/create-deployment-status@v0.2.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           deployment_id: ${{ steps.init_deploy.outputs.id }}
