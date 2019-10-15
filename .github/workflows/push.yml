@@ -11,6 +11,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ github.ref }}
+          required_contexts: <<EMPTY>>
       - uses: maxkomarychev/create-deployment-status@v0.1.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
