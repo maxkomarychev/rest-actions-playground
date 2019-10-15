@@ -11,7 +11,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ github.ref }}
-      - uses: maxkomarychev/create-deployment-status@v0.1.1
+      - uses: maxkomarychev/create-deployment-status@v0.1.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           deployment_id: ${{ steps.init_deploy.outputs.id }}
