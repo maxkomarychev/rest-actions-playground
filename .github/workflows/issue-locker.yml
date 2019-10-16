@@ -3,7 +3,8 @@ name: push workflow
 on: 
   issues:
     types:
-      - locked
+      - opened
+      - unlocked
 
 jobs:
   deploy:
