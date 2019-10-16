@@ -3,8 +3,26 @@ name: test
 on: push
 
 jobs:
-  lock-issue:
+  one:
     runs-on: ubuntu-latest
+    steps:
+      - name: print event
+        run: echo "${{ toJson(github.event) }}"
+      - name: hello
+        run: echo "Hello, World!"
+  two:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print event
+        run: echo "${{ toJson(github.event) }}"
+      - name: hello
+        run: echo "Hello, World!"
+
+  three:
+    runs-on: ubuntu-latest
+    needs:
+      - one
+      - two
     steps:
       - name: print event
         run: echo "${{ toJson(github.event) }}"
