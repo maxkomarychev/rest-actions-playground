@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print event
-        run: echo ${{ toJson(github.event) }}
+        run: echo "${{ toJson(github.event) }}"
       - uses: maxkomarychev/lock-issue@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
