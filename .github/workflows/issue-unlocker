@@ -1,0 +1,18 @@
+name: issue opened
+
+on: 
+  issues:
+    types:
+      - locked
+
+jobs:
+  lock-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print event
+        run: echo "${{ toJson(github.event) }}"
+      - uses: maxkomarychev/unlock-issue@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue_number: ${{ github.event.issue.number }}
+          lock-reason: off-topic
