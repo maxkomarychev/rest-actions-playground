@@ -1,4 +1,4 @@
-name: push workflow
+name: issue opened
 
 on: 
   issues:
@@ -7,7 +7,7 @@ on:
       - unlocked
 
 jobs:
-  deploy:
+  lock-issue:
     runs-on: ubuntu-latest
     steps:
       - name: print event
@@ -15,5 +15,5 @@ jobs:
       - uses: maxkomarychev/lock-issue@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          issue_number: ${{ github.event.data.id }}
+          issue_number: ${{ github.event.issue.id }}
           lock-reason: off-topic
