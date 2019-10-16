@@ -1,0 +1,12 @@
+name: test
+
+on: push
+
+jobs:
+  lock-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print event
+        run: echo "${{ toJson(github.event) }}"
+      - name: hello
+        run: echo "Hello, World!"
