@@ -1,6 +1,6 @@
 name: status
 
-on: status
+on: [status]
 
 jobs:
   lock-issue:
