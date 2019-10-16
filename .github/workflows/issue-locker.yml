@@ -15,5 +15,5 @@ jobs:
       - uses: maxkomarychev/lock-issue@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          issue_number: ${{ github.event.issue.id }}
+          issue_number: ${{ github.event.issue.number }}
           lock-reason: off-topic
