@@ -1,4 +1,4 @@
-name: issue opened
+name: issue locked
 
 on: 
   issues:
@@ -6,7 +6,7 @@ on:
       - locked
 
 jobs:
-  lock-issue:
+  unlock-issue:
     runs-on: ubuntu-latest
     steps:
       - name: print event
